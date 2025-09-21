@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const textColorClass = app.isFeatured ? 'text-white' : 'text-gray-800';
 
             return `
-                <div class="app-card p-4 sm:p-6 rounded-2xl shadow-xl flex flex-col space-y-3 ${app.isFeatured ? 'text-white app-card-bg-image' : 'bg-white'}" style="${cardStyle}">
+                <div class="app-card p-4 rounded-2xl shadow-xl flex flex-col space-y-3 ${app.isFeatured ? 'text-white app-card-bg-image' : 'bg-white'}" style="${cardStyle}">
                     <div class="flex items-center space-x-3">
                         <div class="w-16 h-16 rounded-xl overflow-hidden shadow-lg">
                             <img src="${app.iconUrl}" alt="${app.name} icon" class="w-full h-full object-cover" />
@@ -129,51 +129,3 @@ document.addEventListener('DOMContentLoaded', () => {
                         ဒေါင်းလုတ်ဆွဲရန်
                     </a>
                 </div>
-            `;
-        }).join('');
-    }
-
-    function updateUI() {
-        const filteredApps = dummyApps
-            .filter(app => currentFilter === 'All Apps' || app.category === currentFilter)
-            .filter(app => app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()));
-
-        const featuredApps = filteredApps.filter(app => app.isFeatured);
-        const otherApps = filteredApps.filter(app => !app.isFeatured);
-
-        renderAppCards(featuredAppListContainer, featuredApps);
-        renderAppCards(allAppListContainer, otherApps);
-    }
-
-    function renderCategories() {
-        categoryNav.innerHTML = categories.map(cat => `
-            <button
-                class="px-4 py-2 mx-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer category-button ${
-                    currentFilter === cat ? 'bg-blue-600 text-white shadow-lg' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }"
-                data-category="${cat}"
-            >
-                ${cat === 'All Apps' ? 'အက်ပ်အားလုံး' : cat}
-            </button>
-        `).join('');
-
-        document.querySelectorAll('.category-button').forEach(button => {
-            button.addEventListener('click', (event) => {
-                currentFilter = event.target.dataset.category;
-                currentSearchTerm = '';
-                searchInput.value = '';
-                renderCategories();
-                updateUI();
-            });
-        });
-    }
-
-    searchInput.addEventListener('input', (event) => {
-        currentSearchTerm = event.target.value;
-        updateUI();
-    });
-
-    // Initial render
-    renderCategories();
-    updateUI();
-});
