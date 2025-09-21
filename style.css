@@ -2,17 +2,27 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: #f0f2f5;
-    overflow-x: auto; /* Desktop width 그대로 mobile scroll */
-}
-
-.container {
-    width: 1200px; /* Desktop site width */
-    margin: 0 auto;
 }
 
 .app-card-bg-image {
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay for featured cards */
+.app-card-bg-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent black overlay */
+    z-index: 0;
+}
+
+.app-card-content {
+    position: relative;
+    z-index: 10;
 }
 
 @keyframes fadeIn {
@@ -22,12 +32,10 @@ body {
 
 .app-card {
     animation: fadeIn 0.5s ease-out;
-    width: 380px;      /* Desktop card width */
-    min-height: 250px; /* Card height */
-    flex-shrink: 0;    /* Prevent shrinking on mobile */
+    min-height: 220px; /* fixed height for cards */
 }
 
-/* Text & button size 그대로 */
+/* Mobile friendly tweaks */
 .app-card h3 {
     font-size: 1rem;
 }
@@ -37,5 +45,11 @@ body {
 }
 
 #search-input {
-    width: 200px;
+    width: 100% !important;
+}
+
+@media (min-width: 640px) {
+    #search-input {
+        width: 12rem;
+    }
 }
