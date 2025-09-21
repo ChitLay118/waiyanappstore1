@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.app-card-bg-image {
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.app-card {
+    animation: fadeIn 0.5s ease-out;
+}
