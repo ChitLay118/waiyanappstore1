@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {id:5,name:'AIDE Pro 2.8',description:'မိုဘိုင်းအက်ပ်ဖန်တီးရန် Professional Android IDE',size:'31.2 MB',rating:4.4,category:'Development',isFeatured:false,iconUrl:'https://placehold.co/48x48/34A853/ffffff?text=A',downloadUrl:'#'},
         {id:6,name:'Video Downloader',description:'ဝဘ်ဆိုက်အမျိုးမျိုးမှ ဗီဒီယိုများဒေါင်းလုတ်ဆွဲရန်',size:'12.5 MB',rating:4.6,category:'Utilities',isFeatured:false,iconUrl:'https://placehold.co/48x48/990099/ffffff?text=V',downloadUrl:'#'},
         {id:7,name:'Modified Apps',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',size:'10.1 MB',rating:4.8,category:'Modified Apps',isFeatured:false,iconUrl:'https://placehold.co/48x48/FF5722/ffffff?text=M',downloadUrl:'#'},
+        {id:8,name:'Modified Apps',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',size:'10.1 MB',rating:4.8,category:'Modified Apps',isFeatured:false,iconUrl:'https://placehold.co/48x48/FF5722/ffffff?text=M',downloadUrl:'#'},
     ];
 
     const categories = ['All Apps', ...new Set(dummyApps.map(app => app.category))];
