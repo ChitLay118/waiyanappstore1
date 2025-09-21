@@ -17,3 +17,22 @@ body {
 .app-card {
     animation: fadeIn 0.5s ease-out;
 }
+
+/* Mobile friendly tweaks */
+.app-card h3 {
+    font-size: 1rem; /* title ကိုသေးစေ */
+}
+
+.app-card p {
+    font-size: 0.75rem; /* description ကိုသေးစေ */
+}
+
+#search-input {
+    width: 100% !important; /* mobile မှာ width ပြည့်စေ */
+}
+
+@media (min-width: 640px) {
+    #search-input {
+        width: 12rem; /* sm screen */
+    }
+}
