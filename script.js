@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const textColorClass = app.isFeatured ? 'text-white' : 'text-gray-800';
 
             return `
-                <div class="app-card p-6 rounded-3xl shadow-xl flex flex-col space-y-4 ${app.isFeatured ? 'text-white app-card-bg-image' : 'bg-white'}" style="${cardStyle}">
-                    <div class="flex items-center space-x-4">
+                <div class="app-card p-4 sm:p-6 rounded-2xl shadow-xl flex flex-col space-y-3 ${app.isFeatured ? 'text-white app-card-bg-image' : 'bg-white'}" style="${cardStyle}">
+                    <div class="flex items-center space-x-3">
                         <div class="w-16 h-16 rounded-xl overflow-hidden shadow-lg">
                             <img src="${app.iconUrl}" alt="${app.name} icon" class="w-full h-full object-cover" />
                         </div>
