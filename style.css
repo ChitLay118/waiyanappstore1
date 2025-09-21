@@ -7,22 +7,6 @@ body {
 .app-card-bg-image {
     background-size: cover;
     background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Overlay for featured cards */
-.app-card-bg-image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* semi-transparent black overlay */
-    z-index: 0;
-}
-
-.app-card-content {
-    position: relative;
-    z-index: 10;
 }
 
 @keyframes fadeIn {
@@ -32,24 +16,23 @@ body {
 
 .app-card {
     animation: fadeIn 0.5s ease-out;
-    min-height: 220px; /* fixed height for cards */
 }
 
 /* Mobile friendly tweaks */
 .app-card h3 {
-    font-size: 1rem;
+    font-size: 1rem; /* title ကိုသေးစေ */
 }
 
 .app-card p {
-    font-size: 0.75rem;
+    font-size: 0.75rem; /* description ကိုသေးစေ */
 }
 
 #search-input {
-    width: 100% !important;
+    width: 100% !important; /* mobile မှာ width ပြည့်စေ */
 }
 
 @media (min-width: 640px) {
     #search-input {
-        width: 12rem;
+        width: 12rem; /* sm screen */
     }
 }
