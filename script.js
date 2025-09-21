@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const featuredAppListContainer = document.getElementById('featured-app-list-container');
-    const allAppListContainer = document.getElementById('all-app-list-container');
+    const featuredContainer = document.getElementById('featured-app-list-container');
+    const allContainer = document.getElementById('all-app-list-container');
     const categoryNav = document.getElementById('category-nav');
     const searchInput = document.getElementById('search-input');
 
@@ -16,29 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
         {id:5,name:'AIDE Pro 2.8',description:'မိုဘိုင်းအက်ပ်ဖန်တီးရန် Professional Android IDE',size:'31.2 MB',rating:4.4,category:'Development',isFeatured:false,iconUrl:'https://placehold.co/48x48/34A853/ffffff?text=A',downloadUrl:'#'},
         {id:6,name:'Video Downloader',description:'ဝဘ်ဆိုက်အမျိုးမျိုးမှ ဗီဒီယိုများဒေါင်းလုတ်ဆွဲရန်',size:'12.5 MB',rating:4.6,category:'Utilities',isFeatured:false,iconUrl:'https://placehold.co/48x48/990099/ffffff?text=V',downloadUrl:'#'},
         {id:7,name:'Modified Apps',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',size:'10.1 MB',rating:4.8,category:'Modified Apps',isFeatured:false,iconUrl:'https://placehold.co/48x48/FF5722/ffffff?text=M',downloadUrl:'#'},
-        {id:8,name:'Modified Apps',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',size:'10.1 MB',rating:4.8,category:'Modified Apps',isFeatured:false,iconUrl:'https://placehold.co/48x48/FF5722/ffffff?text=M',downloadUrl:'#'},
     ];
 
-    const categories = ['All Apps', ...new Set(dummyApps.map(app => app.category))];
+    const categories = ['All Apps', ...new Set(dummyApps.map(a=>a.category))];
 
-    function renderCategories() {
+    function renderCategories(){
         categoryNav.innerHTML = categories.map(cat => `
-            <button
-                class="px-4 py-2 mx-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer category-button ${currentFilter===cat?'bg-blue-600 text-white shadow-lg':'bg-gray-200 text-gray-700 hover:bg-gray-300'}"
-                data-category="${cat}">${cat==='All Apps'?'အက်ပ်အားလုံး':cat}</button>
+            <button class="px-4 py-2 mx-1 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer category-button ${currentFilter===cat?'bg-blue-600 text-white shadow-lg':'bg-gray-200 text-gray-700 hover:bg-gray-300'}" data-category="${cat}">
+                ${cat==='All Apps'?'အက်ပ်အားလုံး':cat}
+            </button>
         `).join('');
         document.querySelectorAll('.category-button').forEach(btn=>{
-            btn.addEventListener('click', e=>{
-                currentFilter = e.target.dataset.category;
-                currentSearchTerm = '';
-                searchInput.value = '';
+            btn.addEventListener('click',e=>{
+                currentFilter=e.target.dataset.category;
+                currentSearchTerm='';
+                searchInput.value='';
                 renderCategories();
                 updateUI();
             });
         });
     }
 
-    function renderAppCards(container, appsToRender, isFeatured=false) {
+    function renderAppCards(container, appsToRender, isFeatured=false){
         if(appsToRender.length===0){
             container.innerHTML=`<p class="text-center text-gray-500 col-span-full">အက်ပ်မတွေ့ပါ</p>`;
             return;
@@ -56,22 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="text-sm">${app.description}</p>
                         </div>
                     </div>
-                    ${!isFeatured?`<a href="${app.downloadUrl}" class="bg-green-500 text-white font-bold py-2 px-6 rounded-full text-center hover:bg-green-600 transition-colors duration-200 self-center w-full mt-auto">ဒေါင်းလုတ်ဆွဲရန်</a>`:''}
+                    ${!isFeatured?`<a href="${app.downloadUrl}" class="bg-green-500 text-white font-bold py-2 px-6 rounded-full text-center hover:bg-green-600 transition-colors duration-200 self-center w-full mt-2">${app.name} ဒေါင်းလုတ်ဆွဲရန်</a>`:''}
                 </div>
             `;
         }).join('');
     }
 
-    function updateUI() {
-        const filteredApps = dummyApps
-            .filter(app => currentFilter==='All Apps' || app.category===currentFilter)
-            .filter(app => app.name.toLowerCase().includes(currentSearchTerm.toLowerCase()));
-
-        renderAppCards(featuredAppListContainer, filteredApps.filter(app=>app.isFeatured), true);
-        renderAppCards(allAppListContainer, filteredApps.filter(app=>!app.isFeatured), false);
+    function updateUI(){
+        const filtered=dummyApps
+            .filter(a=>currentFilter==='All Apps'||a.category===currentFilter)
+            .filter(a=>a.name.toLowerCase().includes(currentSearchTerm.toLowerCase()));
+        renderAppCards(featuredContainer,filtered.filter(a=>a.isFeatured),true);
+        renderAppCards(allContainer,filtered.filter(a=>!a.isFeatured),false);
     }
 
-    searchInput.addEventListener('input', e=>{
+    searchInput.addEventListener('input',e=>{
         currentSearchTerm=e.target.value;
         updateUI();
     });
@@ -81,15 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Featured Carousel
     function startFeaturedCarousel(){
-        const container=document.getElementById('featured-app-list-container');
-        const cards=container.children;
-        const total=cards.length;
+        const cards=featuredContainer.children;
         setInterval(()=>{
-            featuredIndex++;
-            if(featuredIndex>=total) featuredIndex=0;
+            const perView=window.innerWidth>=1024?2:1;
+            featuredIndex += perView;
+            if(featuredIndex>=cards.length) featuredIndex=0;
             const cardWidth=cards[0].offsetWidth;
-            container.scrollLeft=cardWidth*featuredIndex;
+            featuredContainer.scrollLeft = cardWidth*featuredIndex;
         },3000);
     }
+
     startFeaturedCarousel();
 });
