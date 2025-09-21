@@ -2,6 +2,12 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: #f0f2f5;
+    overflow-x: auto; /* Desktop width 그대로 mobile scroll */
+}
+
+.container {
+    width: 1200px; /* Desktop site width */
+    margin: 0 auto;
 }
 
 .app-card-bg-image {
@@ -16,23 +22,20 @@ body {
 
 .app-card {
     animation: fadeIn 0.5s ease-out;
+    width: 380px;      /* Desktop card width */
+    min-height: 250px; /* Card height */
+    flex-shrink: 0;    /* Prevent shrinking on mobile */
 }
 
-/* Mobile friendly tweaks */
+/* Text & button size 그대로 */
 .app-card h3 {
-    font-size: 1rem; /* title ကိုသေးစေ */
+    font-size: 1rem;
 }
 
 .app-card p {
-    font-size: 0.75rem; /* description ကိုသေးစေ */
+    font-size: 0.75rem;
 }
 
 #search-input {
-    width: 100% !important; /* mobile မှာ width ပြည့်စေ */
-}
-
-@media (min-width: 640px) {
-    #search-input {
-        width: 12rem; /* sm screen */
-    }
+    width: 200px;
 }
