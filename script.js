@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {id:10,name:'Spotify Premium',description:'ကြော်ငြာမပါဘဲ အကန့်အသတ်မရှိ သီချင်းနားဆင်ရန်',size:'52.4 MB',rating:4.7,category:'Entertainment',isFeatured:true,iconUrl:'https://modyolo.com/wp-content/uploads/2021/11/spotify-apk-mod-premium-150x150.png',downloadUrl:'https://files.modyolo.com/Spotify/Spotify_%20v9.0.82.1008%20x.xapk'},
         {id:11,name:'WY AppStore',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',size:'15.2 MB',rating:4.0,category:'Modified Apps',isFeatured:true,iconUrl:'https://i.ibb.co/PzxgMt7N/photo-2025-09-18-00-58-09.jpg',downloadUrl:'https://www.mediafire.com/file/n8ohx9xnfisynuw/WY_App_Store.apk/file'},
         {id:12,name:'Sketchware Pro',description:'Android အက်ပ်ဖန်တီးရန် ခေတ်မီ platform',size:'21.2 MB',rating:4.5,category:'Development',isFeatured:true,iconUrl:'https://i.ibb.co/YB24757s/photo-2025-09-18-07-49-55.jpg',downloadUrl:'https://www.mediafire.com/file/7pi9zf551xbgiy8/Sketchware_pro.apk/file'},
+        {id:13,name:'Tiktok',description:'tiktok',size:'21.2 MB',rating:4.5,category:'Entertainment',isFeatured:true,iconUrl:'https://modyolo.com/wp-content/uploads/2021/09/tiktok-150x150.jpg',downloadUrl:'https://files.modyolo.com/TikTok/TikTok_%20v41.8.15%20_MOD.apk'},
+
         ];
     const categories = ['All Apps', ...new Set(dummyApps.map(a=>a.category))];
 
