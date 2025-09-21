@@ -9,6 +9,7 @@ body {
     background-position: center;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .app-card-bg-image::before {
@@ -36,6 +37,7 @@ body {
 .featured-card {
     transition: transform 0.5s ease-in-out;
     min-width: 100%;
+    flex-shrink: 0;
 }
 
 @media (min-width: 1024px) {
