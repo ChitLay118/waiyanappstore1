@@ -65,14 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {id:55,name:'CarX Highway Racing',description:'Unlimited Money/VIP Unlocked',size:'21.2 MB',rating:4.5,category:'Utilities',isFeatured:false,iconUrl:'https://getmodsapk.com/storage/CarX%20Highway%20Racing%20MOD%20APK%20(1)0.webp',downloadUrl:'https://getmodsapk.com/dl-track/carx-highway-racing-apk-mod/211881'},
         {id:56,name:'Invasion: Aerial Warfare',description:'Unlimited Money/Energy',size:'21.2 MB',rating:4.5,category:'Utilities',isFeatured:false,iconUrl:'https://getmodsapk.com/storage/Invasion%20Modern%20Empire%20MOD%20APK4.webp',downloadUrl:'https://getmodsapk.com/dl-track/invasion-modern-empire-mod-apk/210877'},
         {id:57,name:'Tacticool',description:'Mod Menu/Unlimited Money',size:'21.2 MB',rating:4.5,category:'Utilities',isFeatured:false,iconUrl:'https://getmodsapk.com/storage/Tacticool%20MOD%20APK%20(1)3.webp',downloadUrl:'https://getmodsapk.com/dl-track/tacticool-mod-apk/210869'},
-        {id:58,name:'MyanmarNet',
-         description:'nohave',
-         size:'21.2 MB',
-         rating:4.5,category:'Utilities',
-         isFeatured:false,
-         iconUrl:'https://i.ibb.co/vCKbgpTQ/photo-2025-09-10-14-24-45.jpg',
-         downloadUrl:''},
-
         ];
     const categories = ['All Apps', ...new Set(dummyApps.map(a=>a.category))];
 
