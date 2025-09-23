@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <h3 class="text-lg font-bold">${app.name}</h3>
                     <p class="text-sm text-gray-500">${app.category}</p>
-                    <p class="text-sm">${app.description}</p>
+            
                     <a href="${app.downloadUrl}" class="bg-green-500 text-white font-bold py-2 px-6 rounded-full text-center hover:bg-green-600 transition-colors duration-200 w-full">
                         Download
                     </a>
