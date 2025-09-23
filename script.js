@@ -9,43 +9,43 @@ document.addEventListener('DOMContentLoaded', () => {
     let featuredIndex = 0;
 
     const dummyApps = [
-        {id:1,name:'Netflix Premium',description:'အကန့်အသတ်မရှိ ရုပ်ရှင်နှင့် တီဗီရှိုးများကြည့်ရှုရန်',category:'Entertainment',isFeatured:true,
+        {id:1,name:'Netflix Premium',category:'Entertainment',isFeatured:true,
          iconUrl:'https://modyolo.com/wp-content/uploads/2021/09/netflix-150x150.jpg',
          bgImageUrl:'https://i.ibb.co/jkqNvDqR/pexels-dreamypixel-547114.jpg',
          downloadUrl:'https://files.modyolo.com/Netflix./Netflix%20v9.34.0%20MOD.apk'},
         
-        {id:2,name:'Spotify Premium',description:'ကြော်ငြာမပါဘဲ အကန့်အသတ်မရှိ သီချင်းနားဆင်ရန်',category:'Entertainment',isFeatured:true,
+        {id:2,name:'Spotify Premium',category:'Entertainment',isFeatured:true,
          iconUrl:'https://modyolo.com/wp-content/uploads/2021/11/spotify-apk-mod-premium-150x150.png',
          bgImageUrl:'https://i.ibb.co/dstKxsX4/pexels-mccutcheon-1191710.jpg',
          downloadUrl:'https://files.modyolo.com/Spotify/Spotify_%20v9.0.82.1008%20x.xapk'},
         
-        {id:3,name:'WY AppStore',description:'ပြုပြင်ထားသော အက်ပ်များကို ရှာဖွေပြီး ဒေါင်းလုတ်ဆွဲရန်',
+        {id:3,name:'WY AppStore',
          category:'Modified Apps',isFeatured:true,iconUrl:'https://i.ibb.co/PzxgMt7N/photo-2025-09-18-00-58-09.jpg',
          bgImageUrl:'https://i.ibb.co/XHJwdsm/pexels-umkreisel-app-956999.jpg',
          downloadUrl:'https://www.mediafire.com/file/n8ohx9xnfisynuw/WY_App_Store.apk/file'},
         
-        {id:4,name:'Sketchware Pro',description:'Android အက်ပ်ဖန်တီးရန် ခေတ်မီ platform',category:'Development',
+        {id:4,name:'Sketchware Pro',category:'Development',
          isFeatured:true,iconUrl:'https://i.ibb.co/YB24757s/photo-2025-09-18-07-49-55.jpg',
          bgImageUrl:'https://i.ibb.co/YFQkwW8G/photo-2025-09-17-23-50-08.jpg',
          downloadUrl:'https://www.mediafire.com/file/7pi9zf551xbgiy8/Sketchware_pro.apk/file'},
         
-        {id:5,name:'AIDE Pro 2.8',description:'မိုဘိုင်းအက်ပ်ဖန်တီးရန် Professional Android IDE',category:'Development',
+        {id:5,name:'AIDE Pro 2.8',category:'Development',
          isFeatured:false,iconUrl:'https://i.ibb.co/8CPMDm7/photo-2025-09-18-07-50-07.jpg',
          downloadUrl:'https://www.mediafire.com/file/rh85g28nbmnur3f/AIDE_Pro_2.8.7-freely.apk/file'},
         
-        {id:6,name:'Download Video No Watermark',description:'ဝဘ်ဆိုက်အမျိုးမျိုးမှ ဗီဒီယိုများဒေါင်းလုတ်ဆွဲရန်',
+        {id:6,name:'Download Video No Watermark',
          category:'Utilities',isFeatured:false,iconUrl:'https://i.ibb.co/tTrfrTT2/photo-2025-09-18-10-04-51.jpg',
          downloadUrl:'https://www.mediafire.com/file/jcj5q0w5s4t6p3r/AhaTik_Downloader_Premium_v1.52.3_Modded_by_%2540Getmodpcs.apk/file'},
         
-        {id:7,name:'IMDB Movies and TV Shows',description:'ဗီဒီယိုအားလုံးကို ကြည့်ရှုနိုင်သည်',category:'Entertainment',
+        {id:7,name:'IMDB Movies and TV Shows',category:'Entertainment',
          isFeatured:false,iconUrl:'https://i.ibb.co/206dWSK6/photo-2025-09-18-11-23-21.jpg',
          downloadUrl:'https://www.mediafire.com/file/iehjn9emmv2pa2l/IMDb_Premium_v9.3.2.160259480_Modded_by_%2540Getmodpcs.apk/file'},
         
-        {id:8,name:'သတင်းနှင့်ဇာတ်ကား',description:'သတင်း၊ ရုပ်ရှင်နှင့် ဗီဒီယိုများ ကြည့်ရှုရန်',category:'Entertainment',
+        {id:8,name:'သတင်းနှင့်ဇာတ်ကား',category:'Entertainment',
          isFeatured:false,iconUrl:'https://i.ibb.co/NRB7DRs/IMG-20250907-105744.png',
          downloadUrl:'https://www.mediafire.com/file/kz2cas0hpx4p2mz/%E1%80%9E%E1%80%90%E1%80%84%E1%80%BA%E1%80%B8%E1%80%94%E1%80%BE%E1%80%84%E1%80%BA%E1%80%B7%E1%80%87%E1%80%AC%E1%80%90%E1%80%BA%E1%80%80%E1%80%AC%E1%80%B8update.apk/file'},
          
-        {id:9,name:'Netflix Premium',description:'အကန့်အသတ်မရှိ ရုပ်ရှင်နှင့် တီဗီရှိုးများကြည့်ရှုရန်',category:'Entertainment',
+        {id:9,name:'Netflix Premium',category:'Entertainment',
          isFeatured:false,iconUrl:'https://modyolo.com/wp-content/uploads/2021/09/netflix-150x150.jpg',
          downloadUrl:'https://files.modyolo.com/Netflix./Netflix%20v9.34.0%20MOD.apk'},      
     
