@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div>
                             <h3 class="text-lg font-bold">${app.name}</h3>
-                            <p class="text-sm">${app.description}</p>
+                            
                         </div>
                     </div>
                 </a>
